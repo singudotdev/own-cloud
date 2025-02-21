@@ -1,7 +1,7 @@
 # own-cloud
 Build your own bullet proof cloud.
 
-![image](https://github.com/user-attachments/assets/9e8b5f23-e2ca-4689-bde4-1b21f055a0e4)
+![chart](https://github.com/user-attachments/assets/0505ee22-2be3-41b1-8b37-b9c26dbe49e6)
 
 - **Proxmox VE (Virtualization Platform)** - Foundation for creating and managing virtual machines and containers.
 - **OpenTofu (Infrastructure Provisioning)** - Automates the provisioning of virtualized resources.
