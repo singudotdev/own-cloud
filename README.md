@@ -1,7 +1,7 @@
 # own-cloud
 Build your own bullet proof cloud.
 
-![image](https://github.com/user-attachments/assets/a7d6a201-73ee-450d-9042-3dbcbc66f9fb)
+![image](https://github.com/user-attachments/assets/9e8b5f23-e2ca-4689-bde4-1b21f055a0e4)
 
 - **Proxmox VE (Virtualization Platform)** - Foundation for creating and managing virtual machines and containers.
 - **OpenTofu (Infrastructure Provisioning)** - Automates the provisioning of virtualized resources.
@@ -17,5 +17,4 @@ Build your own bullet proof cloud.
 - **Jaeger (Distributed Tracing)** - Provides tracing for complex transactions.
 - **Proxmox Backup Server (Data Backup)** - Manages data backup for resilience.
 - **Authentik (Identity & Access Management)** - Secures and manages access control.
-- **TeamCity (CI/CD Automation)** - Automates the continuous integration and deployment processes.
 - **Cloudflare (Global Load Balancing & Security)** - Manages traffic and improves security across global networks.
