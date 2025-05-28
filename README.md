@@ -1,7 +1,7 @@
 # own-cloud
 Build your own bullet proof cloud.
 
-![[diagram.png.png]]
+![[img/diagram.png]]
 
 1. **Proxmox VE (Virtualization Platform)**  
    Deploy a Proxmox cluster to provide the foundation for virtual machines and containers.
