@@ -1,20 +1,56 @@
 # own-cloud
 Build your own bullet proof cloud.
 
-![chart](https://github.com/user-attachments/assets/0505ee22-2be3-41b1-8b37-b9c26dbe49e6)
+1. **Proxmox VE (Virtualization Platform)**  
+   Deploy a Proxmox cluster to provide the foundation for virtual machines and containers.
 
-- **Proxmox VE (Virtualization Platform)** - Foundation for creating and managing virtual machines and containers.
-- **OpenTofu (Infrastructure Provisioning)** - Automates the provisioning of virtualized resources.
-- **Ansible (Configuration Management)** - Manages configurations across the infrastructure.
-- **Ceph (Scalable Storage)** - Provides a storage solution for the infrastructure.
-- **Kubernetes (Container Orchestration)** - Manages containerized applications.
-- **Cilium (Network & Security Management)** - Enhances network security for containers and microservices.
-- **Traefik Proxy (Ingress Control)** - Manages external access to the services.
-- **Istio (Service Mesh)** - Manages communication between services.
-- **OPA/Gatekeeper + Falco + Vault (Policy Enforcement & Security Monitoring)** - Implements security policies and monitoring.
-- **Prometheus & Grafana (Monitoring & Visualization)** - Monitors and visualizes the infrastructure's metrics.
-- **Elasticsearch, Filebeat & Kibana + Cloudflare Logs (Logging & Data Visualization)** - Manages logging and data analysis.
-- **Jaeger (Distributed Tracing)** - Provides tracing for complex transactions.
-- **Proxmox Backup Server (Data Backup)** - Manages data backup for resilience.
-- **Authentik (Identity & Access Management)** - Secures and manages access control.
-- **Cloudflare (Global Load Balancing & Security)** - Manages traffic and improves security across global networks.
+2. **Ceph (Scalable Storage)**  
+   Set up Ceph and integrate with Proxmox to provide distributed, resilient storage for VMs and containers.
+
+3. **Proxmox Backup Server (Data Backup)**  
+   Install and configure Proxmox Backup Server to ensure regular backup and restore for VMs, containers, and Ceph volumes.
+
+4. **OpenTofu (Infrastructure Provisioning)**  
+   Use OpenTofu to automate the provisioning of VMs, networking, and storage resources in the Proxmox/CEPH environment.
+
+5. **Ansible (Configuration Management)**  
+   Use Ansible to configure operating systems, install base software, and harden all provisioned machines.
+
+6. **Cloudflare (Global Load Balancing & Security)**  
+   Set up Cloudflare for DNS, DDoS, WAF, global load balancing, tunnels, and Zero Trust access to your cluster endpoints.
+
+7. **Kubernetes (Container Orchestration)**  
+   Deploy Kubernetes clusters on prepared VMs, using Ceph as the persistent storage backend.
+
+8. **Cilium (Network & Security Management / Service Mesh)**  
+   Install Cilium for advanced Kubernetes networking, enforcing L3-L7 security policies, encryption, and observability (Hubble).  
+   Enable Cilium Service Mesh if you do not require Istio.
+
+9. **Traefik Enterprise (Ingress Controller & API Gateway)**  
+   Deploy Traefik as the Kubernetes ingress controller for external access, API gateway features, and dynamic L7 routing.  
+   Integrate with Cilium for enhanced policy and observability.
+
+10. **OPA/Gatekeeper + Falco + Vault (Policy Enforcement, Security Monitoring & Secrets Management)**  
+    - **OPA/Gatekeeper:** Enforce Kubernetes admission and compliance policies.  
+    - **Falco:** Monitor runtime security and suspicious activity.  
+    - **Vault:** Securely manage and inject secrets.
+
+11. **Prometheus & Grafana (Monitoring & Visualization)**  
+    Deploy Prometheus for metrics collection and Grafana for dashboards and alerting across Kubernetes, Cilium, Traefik, etc.
+
+12. **Elasticsearch, Filebeat & Kibana + Cloudflare Logs (Centralized Logging & Data Visualization)**  
+    Aggregate and visualize logs from Kubernetes, infrastructure, Cilium Hubble, Cloudflare, and security events.
+
+13. **Jaeger (Distributed Tracing)**  
+    Deploy Jaeger for tracing microservices and integrating with Cilium, Traefik, and application workloads.
+
+14. **Authentik (Identity & Access Management)**  
+    Set up Authentik for centralized authentication and authorization across infrastructure and applications.
+
+---
+
+**Notes:**
+- **Cilium** provides both advanced networking and service mesh features, reducing (but not eliminating) the need for Istio. Use Istio only if advanced mesh features are required.
+- **Storage and backup** are provisioned before any clusters or workloads to guarantee persistence and disaster recovery.
+- **Cloudflare** is set up before Kubernetes ingress to ensure security for public endpoints.
+- **Observability, logging, and tracing** are installed after the core platform is operational.
