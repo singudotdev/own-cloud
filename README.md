@@ -37,7 +37,7 @@ Build your own bullet proof cloud.
     - **Falco:** Monitor runtime security and suspicious activity.  
     - **Vault:** Securely manage and inject secrets.
 
-11. **Prometheus & Grafana (Monitoring & Visualization)**  
+11. **Prometheus, Grafana & Grafana Alloy (Monitoring & Visualization)**  
     Deploy Prometheus for metrics collection and Grafana for dashboards and alerting across Kubernetes, Cilium, Traefik, etc.
 
 12. **Elasticsearch, Filebeat & Kibana + Cloudflare Logs (Centralized Logging & Data Visualization)**  
